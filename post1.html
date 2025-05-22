@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Szczegóły artykułu</title>
+  <link rel="stylesheet" href="post1.css" />
+</head>
+<body>
+  
+  <div id="postContainer" class="post-container"></div>
+
+  <script type="module">
+    import { db } from './firebase-config.js';
+    import { doc, getDoc } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
+
+    // Funkcja do pobierania ID z URL
+    function getPostIdFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('id');
+    }
+
+    async function loadArticle() {
+      const postId = getPostIdFromUrl();
+      const container = document.getElementById('postContainer');
+
+      if (!postId) {
+        container.innerHTML = "<p>Nie znaleziono artykułu (brak ID).</p>";
+        return;
+      }
+
+      try {
+        const docRef = doc(db, 'articles', postId);
+        const docSnap = await getDoc(docRef);
+
+        if (!docSnap.exists()) {
+          container.innerHTML = "<p>Nie znaleziono artykułu.</p>";
+          return;
+        }
+
+        const post = docSnap.data();
+
+        container.innerHTML = `
+          <div class="post-full">
+            <img src="${post.imgSrc}" alt="Miniaturka" class="post-full-img" />
+            <h1 class="post-full-title">${post.title}</h1>
+            <p class="post-full-date">${post.date}</p>
+            <div class="post-full-content">${post.content}</div>
+          </div>
+        `;
+      } catch (e) {
+        container.innerHTML = "<p>Błąd podczas ładowania artykułu.</p>";
+        console.error(e);
+      }
+    }
+
+    loadArticle();
+    
+  </script>
+</body>
+</html>
