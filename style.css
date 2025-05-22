@@ -1,0 +1,369 @@
+/* Resetowanie marginesów i paddingów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body i czcionki */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    height: auto; /* Upewniamy się, że body może rosnąć */
+}
+
+/* Stylowanie headera */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 0;
+    background-color: black;
+    z-index: 100;
+}
+
+/* Kontener na logo i menu */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Logo */
+.logo a {
+    font-size: 10px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Menu */
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: red;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: darkred;
+}
+
+/* Dodanie marginesu do góry, aby pasek nie zakrywał treści */
+body {
+    margin-top: 100px; /* Dopasuj w zależności od wysokości paska */
+}
+
+/* Sekcja z obrazkiem na samej górze strony */
+.header-image {
+    background-image: url('mainbackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+/* Napis na obrazie */
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Treść strony */
+.main-content {
+    padding: 20px;
+    color: #000;
+    min-height: 200vh; /* Zwiększa wysokość treści, aby strona miała czym się przewijać */
+}
+
+/* Sekcja z drugim obrazem */
+.content-image {
+    background-image: url('main2.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 100%;
+    position: relative;
+}
+
+/* Czarna linia */
+.line {
+    width: 100%;
+    height: 7px;
+    background-color: black;
+    margin-bottom: 0px;
+}
+
+/* Wyśrodkowanie tekstu w sekcji z drugim obrazem */
+.project-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    max-width: 80%;
+}
+
+/* Projektowanie tekstu */
+.project-text h2 {
+    font-size: 46px;
+    margin-bottom: 15px;
+}
+
+.project-text p {
+    font-size: 28px;
+    line-height: 1.6;
+}
+
+/* Kolejna sekcja z tłem */
+.additional-section {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Stylizacja tytułu */
+.additional-section h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Tekst w sekcji */
+.additional-section p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Sekcja z obrazkiem i tekstem po lewej */
+.about-us {
+    background-image: url('Main3.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    position: relative;
+    padding: 50px 20px;
+}
+
+.about-us-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Wyrównuje tekst do środka */
+    color: white;
+    max-width: 800px;
+    text-align: center; /* Wyrównanie tekstu na środku */
+    line-height: 1.6;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.about-us h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: white;
+    padding: 0 20px;
+}
+
+/* Sekcja z pytajnikami (usunięta animacja) */
+.question-mark {
+    position: absolute;
+    top: 0;
+    color: rgba(220, 220, 220, 0.6);
+    font-weight: bold;
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+}
+
+/* Stopka */
+.footer {
+    background-color: #ff0000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 0px;
+}
+
+/* Linki w stopce */
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Sekcja dodatkowa */
+.extended-space {
+    height: 1000px; /* Zwiększamy wysokość, aby strona była dłuższa */
+    background-color: #f7f7f7;
+}
+
+/* Sekcja z nowym obrazem na dole */
+.new-image-section {
+    background-image: url('main4.jpg'); /* Ścieżka do nowego obrazu */
+    background-size: cover; /* Obraz rozciąga się na całą szerokość */
+    background-position: center; /* Obraz wyśrodkowany */
+    height: 500px; /* Wysokość sekcji */
+    width: 100%;
+    position: relative; /* Pozycjonowanie dla tekstu */
+}
+
+/* Tekst na nowym obrazie */
+.new-image-text {
+    position: absolute;
+    top: 50%; /* Wyrównanie tekstu w pionie */
+    left: 50%; /* Wyrównanie tekstu w poziomie */
+    transform: translate(-50%, -50%); /* Wyśrodkowanie tekstu */
+    color: white;
+    font-size: 32px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Cień dla lepszej widoczności */
+    text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+/* Sekcja z nowym obrazem na dole */
+.new-image-section {
+    background-image: url('main4.jpg'); /* Ścieżka do nowego obrazu */
+    background-size: cover; /* Obraz rozciąga się na całą szerokość */
+    background-position: center; /* Obraz wyśrodkowany */
+    height: 500px; /* Wysokość sekcji */
+    width: 100%;
+    position: relative; /* Pozycjonowanie dla tekstu */
+    padding: 20px; /* Dodatkowy padding, aby tekst miał odstęp od krawędzi */
+}
+
+/* Tekst na nowym obrazie */
+.new-image-text {
+    position: absolute;
+    top: 50%; /* Wyrównanie tekstu w pionie */
+    left: 10%; /* Wyrównanie tekstu do lewej */
+    transform: translateY(-50%); /* Wyśrodkowanie tekstu w pionie */
+    color: white;
+    font-size: 28px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Cień dla lepszej widoczności */
+    text-align: left; /* Tekst wyrównany do lewej */
+    line-height: 1.6;
+    max-width: 600px; /* Maksymalna szerokość tekstu, aby nie wychodził poza ekran */
+}
+
+/* Przycisk "Blog" */
+.new-image-button {
+    display: inline-block;
+    background-color: #ff0000; /* Kolor tła przycisku */
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px; /* Odstęp od tekstu */
+    transition: background-color 0.3s ease;
+}
+
+.new-image-button:hover {
+    background-color: #333; /* Zmiana koloru tła po najechaniu */
+}
+
+#loginModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+  }  
+
+.modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    display: none; /* tylko jeden display */
+  }
+  
+  #questionMarksContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Pytajniki nie będą blokować innych kliknięć */
+    z-index: 999; /* Zapewni, że pytajniki będą wyświetlane nad innymi elementami */
+  }
+  
+  .questionMark {
+    position: absolute;
+    font-size: 30px;
+    color: #808080; /* Szary kolor */
+    opacity: 0;
+    animation: fall 5s infinite;
+  }
+  
+  @keyframes fall {
+    0% {
+      top: -30px;
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }

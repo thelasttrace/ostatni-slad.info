@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blog</title>
+  <link rel="stylesheet" href="style2.css" />
+
+  <style>
+    /* --- Styl modalu logowania --- */
+    #loginModal {
+      display: none; /* ukryty domyślnie */
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #loginModal > div {
+      background: #fff;
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      width: 350px;
+      max-width: 90vw;
+      text-align: center;
+      animation: fadeInScale 0.3s ease forwards;
+    }
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      } to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    #loginModal h3 {
+      margin-bottom: 25px;
+      font-weight: 700;
+      color: #333;
+      font-size: 1.5rem;
+    }
+    #loginModal input[type="email"],
+    #loginModal input[type="password"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: border-color 0.25s ease;
+    }
+    #loginModal input[type="email"]:focus,
+    #loginModal input[type="password"]:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+    #loginModal button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+      user-select: none;
+    }
+    #loginBtn {
+      background-color: #007bff;
+      color: #fff;
+    }
+    #loginBtn:hover {
+      background-color: #0056b3;
+    }
+    #closeModal {
+      background-color: #f1f1f1;
+      color: #333;
+    }
+    #closeModal:hover {
+      background-color: #ddd;
+    }
+
+    /* Reszta Twoich styli */
+    #addPostButton {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 15px 20px;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+    .post {
+      margin: 40px;
+      padding: 40px;
+      border: 1px solid #ccc;
+    }
+    .post-thumbnail img {
+      width: 400px;
+    }
+    @media (max-width: 400px) {
+      #loginModal > div {
+        padding: 20px 15px;
+        width: 90vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Nagłówek (header) -->
+  <header id="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><img src="logosmall.png" alt="Ostatni Ślad Logo" height="40%" width="auto" /></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Najnowsze Informacje</a></li>
+          <li><a href="#">Sprawy/Reportaże</a></li>
+          <li><a href="Blog.html">Blog</a></li>
+          <li><a href="#">Foto/Video</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Modal logowania -->
+  <div id="loginModal">
+    <div>
+      <h3>Zaloguj się</h3>
+      <input id="username" type="email" placeholder="Email" />
+      <input id="password" type="password" placeholder="Hasło" />
+      <button id="loginBtn">Zaloguj</button>
+      <button id="closeModal">Anuluj</button>
+      <button id="guestBtn" style="margin-top: 10px; background-color: #666; color: white;">Kontynuuj jako gość</button>
+    </div>
+  </div>
+
+  <!-- Tu pojawi się przycisk "Dodaj" jeśli użytkownik jest zalogowany -->
+  <header></header>
+
+  <section class="blog-section">
+    <!-- Artykuły będą dodawane tutaj -->
+  </section>
+
+  <section id="blogSection" class="blog-section"></section>
+
+  <div id="blog-section" class="blog-section"></div>
+
+  <div id="blogSection"></div>
+
+  <!-- Dodawanie artykułów po zalogowaniu -->
+  <div id="admin-panel" style="display: none;">
+    <h3>Dodaj nowy artykuł</h3>
+    <input type="text" id="titleInput" placeholder="Tytuł" />
+    <input type="text" id="dateInput" placeholder="Data (RRRR-MM-DD)" />
+    <input type="text" id="thumbInput" placeholder="Link do miniaturki" />
+    <textarea id="contentInput" placeholder="Treść artykułu"></textarea>
+    <button onclick="generateArticle()">Generuj JSON</button>
+    <pre id="generatedJson" style="background:#eee; padding:1em;"></pre>
+  </div>
+
+  <pre id="jsonOutput" style="display: none;"></pre>
+
+  <a href="post1.html?id=${docRef.id}">
+
+  <!-- Stopka -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Ostatni Ślad. Wszystkie prawa zastrzeżone.</p>
+      <p><a href="#">Polityka prywatności</a> | <a href="#">Kontakt</a></p>
+    </div>
+  </footer>
+
+  <script type="module" src="mainscript.js" defer></script>
+</body>
+</html>

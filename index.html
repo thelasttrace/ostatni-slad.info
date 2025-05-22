@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Strona Główna</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #loginModal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #loginModalContent {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    #loginModal input {
+      display: block;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- MODAL LOGOWANIA -->
+  <div id="loginModal">
+    <div id="loginModalContent">
+      <h2>Zaloguj się</h2>
+      <input type="text" id="username" placeholder="Login">
+      <input type="password" id="password" placeholder="Hasło">
+      <button id="loginBtn">Zaloguj</button>
+      <button id="closeModal">Zamknij</button>
+    </div>
+  </div>
+
+  <!-- Obraz na samej górze strony -->
+  <div class="header-image"></div>
+  <!-- Napis na obrazie -->
+  <div class="header-text">
+    "Nie każda prawda chce być odkryta<br>
+    My ją znajdujemy"
+  </div>
+
+  <!-- Nagłówek (header) -->
+  <header id="header">
+    <div class="container">
+      <div class="logo">
+        <a href="#"><img src="logosmall.png" alt="Ostatni Ślad Logo" height="40%" width="auto"></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Najnowsze Informacje</a></li>
+          <li><a href="#">Sprawy/Reportaże</a></li>
+          <li><a href="Blog.html">Blog</a></li>
+          <li><a href="#">Foto/Video</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sekcja z drugim obrazem i tekstem -->
+  <div class="content-image">
+    <div class="line"></div>
+    <div class="project-text">
+      <h2>O Projekcie</h2>
+      <p>Działamy jako niezależni śledczy. Naszą misją jest docieranie do ukrytych faktów i prezentowanie ich w sposób rzetelny, z pełnym poszanowaniem dla prawdy i etyki.</p>
+    </div>
+  </div>
+
+  <!-- Sekcja "Kim Jesteśmy" -->
+  <div class="line"></div>
+  <div class="about-us">
+    <div class="about-us-text">
+      <h2>Kim Jesteśmy?</h2>
+      <p>Nie każdy ślad przetrwa próbę czasu. Nie każda prawda chce być odkryta. Ale są tacy, którzy nie potrafią przestać szukać.</p>
+      <p>Ostatni Ślad to wyprawa w głąb zapomnianych miejsc, przemilczanych historii i porzuconych znaków. To strona dla tych, którzy wierzą, że rzeczywistość ma więcej warstw, niż pokazują media.</p>
+      <p>Podążamy tropem tego, co zniknęło – nie po to, by szokować, ale by zrozumieć.</p>
+      <p>Bo każdy ślad – nawet ten ostatni – ma znaczenie. Zostaw po sobie ślad.</p>
+      <p>Dołącz do nas.</p>
+    </div>
+  </div>
+
+  <!-- Sekcja z nowym obrazem -->
+  <div class="new-image-section">
+    <div class="new-image-text">
+      <h2>Kronika Cieni</h2>
+      <p>Zachęcamy do zapoznania się z naszym blogiem, który zawiera różne wpisy, refleksje oraz zakulisowe spostrzeżenia.</p>
+      <a href="Blog.html" class="new-image-button">Blog</a>
+    </div>
+  </div>
+
+  <!-- Stopka -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Ostatni Ślad. Wszystkie prawa zastrzeżone.</p>
+      <p><a href="#">Polityka prywatności</a> | <a href="#">Kontakt</a></p>
+    </div>
+  </footer>
+
+  <!-- Skrypt -->
+  <script src="mainscript.js"></script>
+</body>
+</html>

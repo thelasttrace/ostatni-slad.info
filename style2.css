@@ -1,0 +1,336 @@
+/* Resetowanie marginesów i paddingów */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body i czcionki */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e6e6e6;
+  color: #333;
+  padding-top: 120px; /* dla stałego nagłówka */
+}
+
+/* Nagłówek */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #111;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Kontener */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Logo */
+.logo a {
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Menu */
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  width: 100%;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: darkred;
+}
+
+/* Główna treść */
+.main-content {
+  padding: 100px 20px 20px;
+  background-color: #dcdcdc;
+  min-height: 100vh;
+}
+
+.main-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Stopka */
+.footer {
+  background-color: #ff0000;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  margin-top: 500px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Blog - sekcja postów */
+#blogSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+}
+
+/* Uniwersalny kafelek posta */
+.post {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  align-items: flex-start;
+  transition: box-shadow 0.3s ease;
+}
+
+.post:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.post-thumbnail img {
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+
+.post-content {
+  flex: 1;
+}
+
+.post-meta {
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.post-title {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.post p {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+
+.editable-title:focus,
+h3[contenteditable="true"]:focus {
+  outline: none;
+  background-color: #fce4e4;
+  border-bottom: 1px dashed #666;
+}
+
+/* Fragment treści posta */
+.post-content {
+  margin-top: 10px;
+  padding: 10px 0;
+  color: #666;
+  font-size: 18px;
+}
+
+/* Przycisk usuwania */
+.delete-post-button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #b00020;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9em;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.2s ease;
+}
+
+.delete-post-button:hover {
+  background-color: #900;
+}
+
+/* MODAL Logowania */
+#loginModal {
+  display: none;
+  position: fixed;
+  /* inne style modalnego okna */
+}
+
+#loginModal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+#loginModalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+#loginModal input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#loginModal button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#loginModal button:hover {
+  background-color: #555;
+}
+
+/* Formularz dodawania artykułu */
+.article-form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1002;
+}
+
+.article-form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 70%;
+}
+
+.article-form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.article-form input[type="text"],
+.article-form input[type="date"],
+.article-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+/* Przycisk formularza */
+.article-form button {
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.article-form button:hover {
+  background: #444;
+}
+
+/* Siatka bloga */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.blog-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.blog-card-content {
+  padding: 15px;
+}
+
+.blog-card-title {
+  font-size: 1.2em;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.blog-card-excerpt {
+  font-size: 0.95em;
+  color: #666;
+}
+
+
