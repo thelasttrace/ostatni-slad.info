@@ -1,0 +1,37 @@
+#productionMessage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+  color: #fff;
+  padding: 25px 50px;
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(27, 45, 77, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 10000;
+  text-align: center;
+  letter-spacing: 1.2px;
+}
+
+#productionMessage.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1.05);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 8px 20px rgba(27, 45, 77, 0.6);
+  }
+  50% {
+    box-shadow: 0 12px 30px rgba(27, 45, 77, 0.9);
+  }
+}

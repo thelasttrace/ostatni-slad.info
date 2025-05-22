@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sprawy / Reportaże</title>
+  <link rel="stylesheet" href="sprawy.css" />
+  <style>
+    /* Przycisk zamknięcia */
+    #closeBtn {
+      margin-top: 20px;
+      padding: 8px 18px;
+      background-color: #e67e22;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    #closeBtn:hover {
+      background-color: #d35400;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="productionMessage" class="show">
+    W produkcji
+    <br />
+    <button id="closeBtn">Zamknij</button>
+  </div>
+
+  <script>
+    const message = document.getElementById('productionMessage');
+    const closeBtn = document.getElementById('closeBtn');
+
+    closeBtn.addEventListener('click', () => {
+      message.classList.remove('show');
+      setTimeout(() => {
+        message.style.display = 'none';
+      }, 400);
+    });
+  </script>
+
+</body>
+</html>
